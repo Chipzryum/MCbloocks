@@ -10,13 +10,21 @@ https://github.com/Chipzryum/MCbloocks/blob/main/DiamondPickaxe.obj
 Links to pickaxes for roblox studio:
 
 Wooden Pickaxe: https://create.roblox.com/store/asset/134238065426404/WoodenPickaxe?tab=description
+
 Stone Pickaxe: https://create.roblox.com/dashboard/creations/store/85889993977786/configure
+
 Gold Pickaxe: https://create.roblox.com/dashboard/creations/store/124127617077097/configure
+
 Iron Pickaxe: https://create.roblox.com/dashboard/creations/store/82333879948327/configure
+
 Diamond Pickaxe: https://create.roblox.com/dashboard/creations/store/138532077347839/configure
+
 Netherite Pickaxe: https://create.roblox.com/dashboard/creations/store/104302395074811/configure
 
 Links to blocks for roblox studio:
+
 Stone block: https://create.roblox.com/dashboard/creations/store/96256680765966/configure
+
 Wood block: https://create.roblox.com/dashboard/creations/store/74011307121454/configure
+
 Dirt block: https://create.roblox.com/dashboard/creations/store/82146627081053/configure
