@@ -1,0 +1,44 @@
+import requests
+import pandas as pd
+from datetime import datetime, timedelta
+
+# Function to convert datetime to Unix timestamp
+def to_unix(dt):
+    return int(dt.timestamp())
+
+# Settings
+subreddit = "Bitcoin"
+start_date = datetime(2017, 8, 17)
+end_date = datetime(2017, 8, 24)  # 1 week later
+
+limit = 1000                        # how many posts to pull per call
+
+all_posts = []
+after = to_unix(start_date)
+before = to_unix(end_date)
+
+print("Fetching posts from:", start_date, "to", end_date)
+
+url = f"https://api.pushshift.io/reddit/search/submission/?subreddit={subreddit}&after={after}&before={before}&size={limit}&sort=asc"
+
+res = requests.get(url)
+try:
+    data = res.json()["data"]
+except KeyError:
+    print("ERROR: Unexpected API response:")
+    print(res.text)
+    exit()
+
+
+for post in data:
+    if 'selftext' in post:
+        all_posts.append({
+            "timestamp": datetime.utcfromtimestamp(post["created_utc"]),
+            "title": post["title"],
+            "text": post["selftext"]
+        })
+
+# Save to CSV
+df = pd.DataFrame(all_posts)
+df.to_csv("reddit_bitcoin_posts.csv", index=False)
+print("Saved to reddit_bitcoin_posts.csv")
